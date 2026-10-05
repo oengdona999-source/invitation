@@ -1,0 +1,240 @@
+.QRCodeModal_overlay__3nlvj {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    -webkit-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+    z-index: 999
+}
+
+.QRCodeModal_overlayVisible__A90aE {
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.QRCodeModal_modal__sI9gS {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(.9);
+    -ms-transform: translate(-50%, -50%) scale(.9);
+    transform: translate(-50%, -50%) scale(.9);
+    background: #fff;
+    border-radius: 16px;
+    -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    max-width: 320px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    -webkit-transition: all .3s cubic-bezier(.16, 1, .3, 1);
+    transition: all .3s cubic-bezier(.16, 1, .3, 1);
+    font-family: Kamtumruy Pro, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif
+}
+
+.QRCodeModal_modalVisible__KMBo1 {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1)
+}
+
+.QRCodeModal_closeButton__JEMyr {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    color: #666;
+    z-index: 10
+}
+
+.QRCodeModal_closeButton__JEMyr:hover {
+    background-color: #f0f0f0;
+    color: #333
+}
+
+.QRCodeModal_content__VNssO {
+    padding: 28px 24px 24px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px
+}
+
+.QRCodeModal_header__Ai30g {
+    text-align: center
+}
+
+.QRCodeModal_header__Ai30g h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2
+}
+
+.QRCodeModal_header__Ai30g h2,
+.QRCodeModal_header__Ai30g p {
+    font-family: Kamtumruy Pro, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif
+}
+
+.QRCodeModal_header__Ai30g p {
+    margin: 0;
+    font-size: 13px;
+    color: #666
+}
+
+.QRCodeModal_qrCodeContainer__8Y1gN {
+    padding: 14px;
+    background: linear-gradient(135deg, #f5f5f5, #fff);
+    border-radius: 12px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-animation: QRCodeModal_fadeInScale__HX8Fd .4s ease .1s both;
+    animation: QRCodeModal_fadeInScale__HX8Fd .4s ease .1s both
+}
+
+@-webkit-keyframes QRCodeModal_fadeInScale__HX8Fd {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes QRCodeModal_fadeInScale__HX8Fd {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.QRCodeModal_qrCodeContainer__8Y1gN canvas {
+    display: block
+}
+
+.QRCodeModal_footer__Ma9Fj {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 12px
+}
+
+.QRCodeModal_downloadButton__1qON0 {
+    width: 100%;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 8px;
+    -webkit-box-shadow: 0 4px 15px rgba(102, 126, 234, .4);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, .4);
+    font-family: Kamtumruy Pro, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif
+}
+
+.QRCodeModal_downloadButton__1qON0:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+    -webkit-box-shadow: 0 6px 20px rgba(102, 126, 234, .6);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, .6)
+}
+
+.QRCodeModal_downloadButton__1qON0:active {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.QRCodeModal_closeButtonSecondary__NpNej {
+    width: 100%;
+    padding: 12px 18px;
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    font-family: Kamtumruy Pro, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif
+}
+
+.QRCodeModal_closeButtonSecondary__NpNej:hover {
+    background: #e8e8e8
+}
+
+.QRCodeModal_closeButtonSecondary__NpNej:active {
+    background: #ddd
+}
+
+@media (max-width:480px) {
+    .QRCodeModal_modal__sI9gS {
+        width: 95%;
+        max-height: 95vh
+    }
+    .QRCodeModal_content__VNssO {
+        padding: 32px 24px 24px;
+        gap: 24px
+    }
+    .QRCodeModal_header__Ai30g h2 {
+        font-size: 20px
+    }
+    .QRCodeModal_qrCodeContainer__8Y1gN {
+        padding: 16px
+    }
+    .QRCodeModal_closeButton__JEMyr {
+        width: 36px;
+        height: 36px
+    }
+}
