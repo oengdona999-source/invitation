@@ -2,6 +2,7 @@
 <html lang="km">
 <head>
   <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>ទំព័ររបស់ខ្ញុំ</title>
     
     <!-- ដាក់កូដ CSS នៅទីនេះ -->
@@ -176,7 +177,7 @@
     </button>
   </div>
   <header class="hero" id="cover">
-    <video class="cover-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="1004%20(1).mp4" type="video/mp4"></video>
+    <video class="cover-video" id="cover-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="line-name.png" aria-hidden="true"><source src="1004%20(1).mp4" type="video/mp4"></video>
     <div class="invitation-name-container">
       <h1 class="invitation-name">ភ្ញៀវកិត្តិយស</h1>
       <img class="line-name" src="line-name.png" alt="បន្ទាត់សម្រាប់សរសេរឈ្មោះភ្ញៀវកិត្តិយស">
@@ -254,6 +255,38 @@
     }
     updateViewportHeight();
     window.addEventListener('resize', updateViewportHeight, { passive: true });
+
+    // Mobile-friendly cover video autoplay.
+    const coverVideo = document.getElementById('cover-video');
+
+    function startCoverVideo() {
+      if (!coverVideo) return;
+      coverVideo.muted = true;
+      const playPromise = coverVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // If the browser blocks autoplay, the poster remains visible.
+        });
+      }
+    }
+
+    if (coverVideo) {
+      if (coverVideo.readyState >= 2) {
+        startCoverVideo();
+      } else {
+        coverVideo.addEventListener('loadeddata', startCoverVideo, { once: true });
+      }
+
+      window.addEventListener('load', startCoverVideo, { once: true });
+      window.addEventListener('pageshow', startCoverVideo);
+
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && coverVideo.paused) {
+          startCoverVideo();
+        }
+      });
+    }
+
     document.body.classList.add('has-motion');
     let transitionStarted = false;
     function openInvitation(event) {
@@ -349,6 +382,7 @@
       sections.forEach(section => section.classList.add('is-visible'));
     }
 
+    // This standalone sample keeps newly submitted greetings in this browser only.
     const form = document.querySelector('#greeting-form');
     const messages = document.querySelector('#messages');
     form.addEventListener('submit', event => {
@@ -367,3 +401,13 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
