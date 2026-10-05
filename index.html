@@ -168,7 +168,7 @@
   </style>
 </head>
 <body class="invitation-locked">
-  <audio id="background-music" loop preload="metadata">
+  <audio id="background-music" loop preload="auto">
     <source src="https://cmssambot.b-cdn.net/05/2026/music/njiMAhQsEQethuqHvDFMbeyYqTUCOMpOB1u5DFxd.mp3" type="audio/mpeg">
   </audio>
   <div class="top-controls" aria-label="Sound controls">
@@ -291,6 +291,10 @@
     let transitionStarted = false;
     function openInvitation(event) {
       event.preventDefault();
+      //ដាក់កូដសំឡេងនៅត្រង់នេះ (ភ្លាមៗបន្ទាប់ពីpreventDefault)
+      const music = document.querySelector('#background-music');
+      music.muted = false;
+      music.play().catch(err => console.log("Audio play error:", err));
       if (transitionStarted) return;
       transitionStarted = true;
       const cover = document.querySelector('#cover');
