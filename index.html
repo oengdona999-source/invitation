@@ -4,21 +4,7 @@
   <meta charset="utf-8">
     <meta charset="UTF-8">
     <title>ទំព័ររបស់ខ្ញុំ</title>
-    
-    <!-- ដាក់កូដ CSS នៅទីនេះ -->
-    <style>
-      .image-container {
-          width: 100%;
-          max-width: 400px;
-          aspect-ratio: 9 / 16;
-          margin: 0 auto;
-          overflow: hidden;
-      }
-      .section-art {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
+
     </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover, user-scalable=yes">
   <meta name="theme-color" content="#07142f">
@@ -168,8 +154,10 @@
   </style>
 </head>
 <body class="invitation-locked">
+  <div class="EventPage_videoContainer__C9jiJ EventPage_defaultThemeVideoContainer__Rqkb7  "><img 
+    src="Invitation/cover" preload="auto" autoplay="true" playsinline="" crossorigin="anonymous" webkit-playsinline="true" loop="" controlslist="nodownload" muted="true"
   <audio id="background-music" loop preload="metadata">
-    <source src="https://cmssambot.b-cdn.net/05/2026/music/njiMAhQsEQethuqHvDFMbeyYqTUCOMpOB1u5DFxd.mp3" type="audio/mpeg">
+    <source <audio src="https://cmssambot.b-cdn.net/05/2026/music/njiMAhQsEQethuqHvDFMbeyYqTUCOMpOB1u5DFxd.mp3" loop="" preload="metadata" style="display: none;"></audio>
   </audio>
   <div class="top-controls" aria-label="Sound controls">
     <button class="mute-button" id="mute-button" type="button" aria-label="Mute sound" title="Mute sound">
@@ -177,7 +165,7 @@
     </button>
   </div>
   <header class="hero" id="cover">
-    <video class="cover-video" id="cover-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="line-name.png" aria-hidden="true"><source src="1004%20(1).mp4" type="video/mp4"></video>
+    <video class="cover-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="1004%20(1).mp4" type="video/mp4"></video>
     <div class="invitation-name-container">
       <h1 class="invitation-name">ភ្ញៀវកិត្តិយស</h1>
       <img class="line-name" src="line-name.png" alt="បន្ទាត់សម្រាប់សរសេរឈ្មោះភ្ញៀវកិត្តិយស">
@@ -255,38 +243,6 @@
     }
     updateViewportHeight();
     window.addEventListener('resize', updateViewportHeight, { passive: true });
-
-    // Mobile-friendly cover video autoplay.
-    const coverVideo = document.getElementById('cover-video');
-
-    function startCoverVideo() {
-      if (!coverVideo) return;
-      coverVideo.muted = true;
-      const playPromise = coverVideo.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {
-          // If the browser blocks autoplay, the poster remains visible.
-        });
-      }
-    }
-
-    if (coverVideo) {
-      if (coverVideo.readyState >= 2) {
-        startCoverVideo();
-      } else {
-        coverVideo.addEventListener('loadeddata', startCoverVideo, { once: true });
-      }
-
-      window.addEventListener('load', startCoverVideo, { once: true });
-      window.addEventListener('pageshow', startCoverVideo);
-
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && coverVideo.paused) {
-          startCoverVideo();
-        }
-      });
-    }
-
     document.body.classList.add('has-motion');
     let transitionStarted = false;
     function openInvitation(event) {
