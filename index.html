@@ -2,9 +2,22 @@
 <html lang="km">
 <head>
   <meta charset="utf-8">
-    <meta charset="UTF-8">
     <title>ទំព័ររបស់ខ្ញុំ</title>
-
+    
+    <!-- ដាក់កូដ CSS នៅទីនេះ -->
+    <style>
+      .image-container {
+          width: 100%;
+          max-width: 400px;
+          aspect-ratio: 9 / 16;
+          margin: 0 auto;
+          overflow: hidden;
+      }
+      .section-art {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
     </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover, user-scalable=yes">
   <meta name="theme-color" content="#07142f">
@@ -155,7 +168,7 @@
 </head>
 <body class="invitation-locked">
   <audio id="background-music" loop preload="metadata">
-    <source <audio src="https://cmssambot.b-cdn.net/05/2026/music/njiMAhQsEQethuqHvDFMbeyYqTUCOMpOB1u5DFxd.mp3" loop="" preload="metadata" style="display: none;"></audio>
+    <source src="https://cmssambot.b-cdn.net/05/2026/music/njiMAhQsEQethuqHvDFMbeyYqTUCOMpOB1u5DFxd.mp3" type="audio/mpeg">
   </audio>
   <div class="top-controls" aria-label="Sound controls">
     <button class="mute-button" id="mute-button" type="button" aria-label="Mute sound" title="Mute sound">
@@ -336,7 +349,6 @@
       sections.forEach(section => section.classList.add('is-visible'));
     }
 
-    // This standalone sample keeps newly submitted greetings in this browser only.
     const form = document.querySelector('#greeting-form');
     const messages = document.querySelector('#messages');
     form.addEventListener('submit', event => {
@@ -355,13 +367,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
