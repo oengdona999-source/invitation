@@ -1,0 +1,176 @@
+@font-face{font-family:Khmer;src:url('assets/f984b2fbb680d4d3.ttf')}*{box-sizing:border-box}body{margin:0;background:#081337 url('assets/background-navy.png') center/cover fixed;color:#b59410;font-family:Khmer,serif}main{max-width:428px;margin:auto;position:relative}.backdrop{position:fixed;inset:0;pointer-events:none;overflow:hidden}.backdrop video{width:100%;height:100%;object-fit:cover}#cover{height:100svh;min-height:540px;position:relative}.cover-content{position:absolute;top:64%;width:100%;text-align:center}h1{font-size:24px;line-height:1.6;margin:0 0 12px}.line{width:70%;height:auto}button{cursor:pointer;border:0;background:none;font:inherit;color:inherit}#open{display:block;width:74%;margin:40px auto 0}button img,.image-button img{width:100%;display:block}#invitation{padding:32px 12px;background:transparent;animation:reveal 1.2s ease}.panel{width:100%;display:block}section{margin-bottom:38px}h2{text-align:center;font-size:17px;line-height:1.9;margin:30px 0 20px}.image-button{display:block;width:74%;margin:20px auto}.countdown{position:relative}.countdown div{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;text-align:center;line-height:2}.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border:2px solid #b59410}.gallery button{padding:0}.gallery button:first-child{grid-column:span 2}.gallery img{aspect-ratio:16/9;object-fit:cover}iframe{border:3px solid #b59410;width:100%;aspect-ratio:16/9}form{padding:15px}label{display:block;margin-bottom:8px}input,textarea{width:100%;font:inherit;padding:12px;margin-bottom:16px;color:#f2df9d;background:#07112ed9;border:1px solid #b59410;border-radius:6px}form p{font-size:12px;text-align:center}.message{padding:16px;border:1px solid #b59410;margin:12px;white-space:pre-wrap;overflow-wrap:anywhere}dialog{max-width:95vw;background:#081337;border:1px solid gold}dialog::backdrop{background:#000c}dialog img{display:block;max-width:85vw;max-height:80vh}#dismiss{float:right;font-size:30px}#close{display:block;margin:20px auto;padding:12px;border:1px solid #b59410}@keyframes reveal{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){#invitation{animation:none}}
+/* Phone and iPad layouts, including Safari safe areas and landscape. */
+html{min-height:100%;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{min-height:100%;background-attachment:scroll}
+main{width:100%;max-width:600px}
+[hidden]{display:none!important}
+.backdrop{left:50%;right:auto;width:100%;max-width:600px;transform:translateX(-50%)}
+.backdrop video{object-fit:cover;object-position:center}
+#cover{height:100vh;height:100svh;min-height:0;margin:0}
+.cover-content{top:auto;bottom:max(6vh,env(safe-area-inset-bottom));padding:0 12px}
+#open{width:min(74%,315px);min-height:44px;margin:clamp(16px,4vh,40px) auto 0}
+h1{font-size:clamp(20px,4vw,28px)}
+.line{width:min(70%,300px)}
+#invitation{padding: max(24px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+input,textarea{font-size:16px;min-width:0}
+button,a,input,textarea{touch-action:manipulation}
+button:focus-visible,a:focus-visible{outline:2px solid #ffe6a0;outline-offset:4px}
+#dismiss,#close{min-height:44px;min-width:44px}
+dialog{width:min(95vw,900px);padding:12px;max-height:90vh;max-height:90dvh}
+dialog img{width:100%;object-fit:contain;max-height:75vh;max-height:75dvh}
+@media(min-width:768px){h2{font-size:20px}#invitation{padding-left:24px;padding-right:24px}}
+@media(orientation:landscape) and (max-height:600px){main,.backdrop{max-width:428px}.cover-content{bottom:max(12px,env(safe-area-inset-bottom))}h1{font-size:20px;margin-bottom:4px}.line{max-width:220px}#open{width:220px;margin-top:10px}#cover{min-height:280px}}
+
+
+#sound-toggle{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:100;padding:10px 14px;min-height:44px;border:1px solid #b59410;border-radius:24px;background:#081337ed;color:#ffe6a0;font-size:14px;box-shadow:0 2px 10px #0005}
+/* Gold invitation button with gentle light and envelope motion. */
+#open.invitation-open{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:min(82%,340px);padding:14px 22px;border:1px solid #ebca72;border-radius:18px;background:linear-gradient(135deg,#10244b,#061229 60%,#182e54);color:#ffe7a2;box-shadow:inset 0 0 0 4px #09162c,inset 0 0 0 5px #bc974d,0 6px 22px #0007;animation:invitation-glow 3s ease-in-out infinite;transition:transform .2s ease,box-shadow .2s ease;-webkit-tap-highlight-color:transparent}
+#open.invitation-open::before{content:'';position:absolute;z-index:-1;inset:-100%;background:linear-gradient(110deg,transparent 43%,#ffe7a22b 49%,#fff6d844 50%,transparent 57%);transform:translateX(-60%);animation:invitation-shine 5s ease-in-out infinite;pointer-events:none}
+#open.invitation-open::after{content:'';position:absolute;inset:7px;border:1px solid #e7c26b66;border-radius:11px;pointer-events:none}
+.envelope-icon{font-family:Arial,sans-serif;font-size:28px;line-height:1;color:#efd08a;animation:envelope-float 3s ease-in-out infinite}
+.open-label{font-size:clamp(19px,4.4vw,24px);line-height:1.7;text-shadow:0 1px 3px #0008}
+.open-subtitle{font-family:Georgia,serif;font-size:10px;letter-spacing:2.5px;color:#d3ba7e}
+#open.invitation-open:hover{transform:translateY(-2px)}
+#open.invitation-open:active{transform:scale(.97)}
+@keyframes invitation-glow{0%,100%{box-shadow:inset 0 0 0 4px #09162c,inset 0 0 0 5px #bc974d,0 6px 22px #0007}50%{box-shadow:inset 0 0 0 4px #09162c,inset 0 0 0 5px #bc974d,0 0 22px #ebca7240}}
+@keyframes invitation-shine{0%,35%{transform:translateX(-60%)}75%,100%{transform:translateX(60%)}}
+@keyframes envelope-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(orientation:landscape) and (max-height:600px){#open.invitation-open{width:280px;padding:9px 18px;gap:2px}.envelope-icon{font-size:22px}.open-label{font-size:19px}}
+@media(prefers-reduced-motion:reduce){#open.invitation-open,.envelope-icon,#open.invitation-open::before{animation:none}#open.invitation-open{transition:none}}
+/* Classic ivory invitation plaque. */
+#open.invitation-open{border-radius:8px 24px 8px 24px;border:2px solid #b38b43;background:linear-gradient(135deg,#fffaf0 0%,#f3e7ce 45%,#fff7e5 70%,#e5d3ac 100%);color:#715122;box-shadow:inset 0 0 0 3px #fff7e5,inset 0 0 0 4px #b99a61,0 5px 14px rgba(0,0,0,.150);animation:classic-glow 4s ease-in-out infinite;padding:15px 26px}
+#open.invitation-open::after{border:1px solid #a47e42a6;border-radius:3px 17px 3px 17px;inset:7px}
+#open.invitation-open::before{background:linear-gradient(110deg,transparent 43%,#ffffff50 49%,#fffdf68c 50%,transparent 57%);animation-duration:7s}
+#open .envelope-icon{color:#9b7638;font-size:25px;animation:none}
+#open .open-label{color:#765622;text-shadow:0 1px 0 #fff9eb}
+#open .open-subtitle{color:#8b754b;letter-spacing:2px;font-size:10px}
+@keyframes classic-glow{0%,100%{box-shadow:inset 0 0 0 3px #fff7e5,inset 0 0 0 4px #b99a61,0 5px 14px rgba(0,0,0,.150)}50%{box-shadow:inset 0 0 0 3px #fff7e5,inset 0 0 0 4px #b99a61,0 5px 20px rgba(203,166,94,.121)}}
+@media(orientation:landscape) and (max-height:600px){#open.invitation-open{padding:9px 18px}}
+@media(prefers-reduced-motion:reduce){#open.invitation-open,#open.invitation-open::before{animation:none}}
+/* Khmer-inspired lotus and curling vine ornaments. */
+#open.invitation-open{width:min(90%,370px);min-height:118px;padding:19px 54px;border-radius:42px 12px 42px 12px;background:radial-gradient(ellipse at center,#fffaee,#f1e2c3);border:2px solid #ac7b2c;overflow:hidden}
+#open.invitation-open::after{inset:7px;border-radius:34px 7px 34px 7px;border-color:#b58b48}
+.khmer-ornament{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:47px;height:83px;color:#ae7d2d;pointer-events:none}
+#open .khmer-top-ornament{font-family:Georgia,serif;color:#b38435;font-size:17px;line-height:1}
+#open .open-label{font-size:clamp(18px,4vw,23px);line-height:1.8;white-space:nowrap}
+#open .open-subtitle{font-size:9px;letter-spacing:1.8px}
+@media(max-width:360px){#open.invitation-open{padding-left:43px;padding-right:43px}.khmer-ornament{width:35px;left:8px}#open .open-label{font-size:17px}}
+@media(orientation:landscape) and (max-height:600px){#open.invitation-open{min-height:95px;padding:10px 45px;width:300px}.khmer-ornament{height:68px;width:36px}}
+.khmer-ornament.khmer-ornament-right{left:auto;right:10px;transform:translateY(-50%) scaleX(-1)}
+@media(max-width:360px){.khmer-ornament.khmer-ornament-right{left:auto;right:8px}}
+/* Compact Khmer button with a gentle repeated jump. */
+#open.invitation-open{width:min(76%,290px);min-height:88px;padding:11px 40px;gap:2px;border-radius:30px 10px 30px 10px;animation:khmer-button-jump 2.6s ease-in-out infinite}
+#open.invitation-open::after{border-radius:23px 5px 23px 5px;inset:6px}
+#open .open-label{font-size:clamp(15px,3.6vw,18px);line-height:1.7}
+#open .open-subtitle{font-size:8px;letter-spacing:1.4px}
+#open .khmer-top-ornament{font-size:12px}
+.khmer-ornament{width:32px;height:59px;left:7px}
+.khmer-ornament.khmer-ornament-right{right:7px}
+@keyframes khmer-button-jump{0%,45%,100%{transform:translateY(0)}58%{transform:translateY(-9px)}70%{transform:translateY(0)}80%{transform:translateY(-4px)}90%{transform:translateY(0)}}
+#open.invitation-open:active{animation:none;transform:scale(.96)}
+@media(max-width:360px){#open.invitation-open{width:84%;padding:10px 35px}.khmer-ornament{width:28px}#open .open-label{font-size:15px}}
+@media(orientation:landscape) and (max-height:600px){#open.invitation-open{width:260px;min-height:78px;padding:8px 36px}.khmer-ornament{height:50px;width:28px}}
+@media(prefers-reduced-motion:reduce){#open.invitation-open{animation:none}}
+/* Smaller invitation button. */
+#open.invitation-open{width:min(68%,240px);min-height:72px;padding:8px 31px;gap:1px;border-radius:24px 8px 24px 8px}
+#open.invitation-open::after{inset:5px;border-radius:18px 4px 18px 4px}
+#open .open-label{font-size:15px;line-height:1.6}
+#open .open-subtitle{font-size:7px;letter-spacing:1px}
+#open .khmer-top-ornament{font-size:10px}
+.khmer-ornament{width:23px;height:45px;left:6px}
+.khmer-ornament.khmer-ornament-right{right:6px}
+@media(max-width:360px){#open.invitation-open{width:76%;padding:8px 29px}#open .open-label{font-size:14px}.khmer-ornament{width:22px}}
+@media(orientation:landscape) and (max-height:600px){#open.invitation-open{width:230px;min-height:68px;padding:7px 29px}.khmer-ornament{width:22px;height:42px}}
+/* Raise the invitation button slightly without changing its jump motion. */
+#open.invitation-open{position:relative;top:-12px}
+/* Editable invitation information, preserving the supplied text. */
+.invitation-information{text-align:center;padding:35px 14px 28px;color:#f4d881;text-shadow:0 2px 4px #000b;background:transparent}
+.invitation-information .organizer{font-size:clamp(23px,5vw,31px);line-height:2;margin:0 0 30px;color:#ffe39b}
+.invitation-information p{font-size:clamp(16px,3.8vw,20px);line-height:2.2;margin:20px 0;overflow-wrap:break-word}
+.invitation-information .invitation-heading{font-size:clamp(20px,4.4vw,25px);margin:28px 0}
+.invitation-divider{display:flex;align-items:center;gap:14px;color:#dbb767;margin:30px auto;width:75%}
+.invitation-divider::before,.invitation-divider::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,transparent,#dbb767)}
+.invitation-divider::after{transform:scaleX(-1)}
+.invitation-information .invitation-date,.invitation-information .invitation-time{font-size:clamp(19px,4.4vw,24px);color:#ffe39b}
+.invitation-venue span{display:block;font-family:Georgia,serif;letter-spacing:1px;font-weight:bold;font-size:clamp(18px,4vw,23px);line-height:1.7;margin-top:8px}
+@media(max-width:360px){.invitation-information{padding-left:4px;padding-right:4px}}
+/* Formal Khmer typography: rounded headings and readable body text. */
+.invitation-information{font-family:'Khmer OS Siemreap',Siemreap,'Khmer OS Battambang',sans-serif}
+.invitation-information .organizer,.invitation-information .invitation-heading{font-family:'Khmer OS Muol Light','Khmer OS Muol',Moul,Khmer,serif;font-weight:400;line-height:2.2}
+.invitation-information .organizer{font-size:clamp(20px,4.5vw,27px)}
+.invitation-information .invitation-heading{font-size:clamp(18px,4vw,23px)}
+.invitation-information p{font-size:clamp(18px,4vw,22px);line-height:2}
+.invitation-information .invitation-date,.invitation-information .invitation-time{font-family:'Khmer OS Siemreap',Siemreap,sans-serif;font-size:clamp(19px,4.2vw,23px)}
+/* Restore the original logo using only its top image region. */
+.invitation-logo{position:relative;width:150px;height:170px;overflow:hidden;margin:0 auto 22px}
+.invitation-logo img{position:absolute;width:400px;max-width:none;height:auto;left:-125px;top:-20px}
+.invitation-information,.invitation-information .organizer,.invitation-information .invitation-heading,.invitation-information .invitation-date,.invitation-information .invitation-time,.invitation-information .invitation-venue{color:#000;text-shadow:none}
+/* Bundle the exact font for consistent phone and iPad rendering. */
+@font-face{font-family:'Invitation Muol Light';src:url('assets/fonts/KhmerOSMuolLight.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+body,button,input,textarea,.invitation-information,.invitation-information .organizer,.invitation-information .invitation-heading,.invitation-information p,.invitation-information .invitation-date,.invitation-information .invitation-time,.invitation-venue span,#open .open-label,#open .open-subtitle{font-family:'Invitation Muol Light',serif;font-weight:400}
+/* Keep each honorific together with consistent spacing between titles. */
+.invitation-information .honorifics{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.65em;row-gap:.3em;line-height:1.9;margin:24px 0}
+.honorifics span{white-space:nowrap}
+/* Two explicit honorific lines, scaled to the invitation width. */
+.invitation-information{container-type:inline-size}
+.invitation-information .honorifics{display:block;font-size:clamp(18px,4vw,22px);line-height:2.4}
+.honorifics .honorific-line{display:block;white-space:nowrap}
+
+/* Use the same gap between all honorifics on both lines. */
+.honorifics .honorific-line{display:flex;justify-content:center;align-items:baseline;flex-wrap:nowrap;gap:.5em}
+.honorifics .honorific-line>span{flex:0 0 auto;white-space:nowrap}
+/* Match vertical rhythm between honorifics and invitation body lines. */
+.invitation-information p,.invitation-information .honorifics{line-height:2.2;margin:0}
+.invitation-information .invitation-heading{margin:24px 0;line-height:2.2}
+.invitation-information .honorifics{margin-bottom:0}
+.invitation-information .honorific-line{line-height:2.2}
+.invitation-information .invitation-date,.invitation-information .invitation-time{margin:12px 0}
+.invitation-information .invitation-venue{margin-top:20px}
+#countdown-clock{color:#000;text-shadow:none;padding:10px}
+.countdown-units{display:flex;justify-content:center;gap:clamp(8px,3vw,22px);width:100%}
+.countdown-units>span{display:flex;flex-direction:column;align-items:center;min-width:45px}
+.countdown-units b{font-size:clamp(24px,5vw,36px);font-weight:400;line-height:1.7}
+.countdown-units small{font-size:clamp(11px,2.8vw,15px);line-height:2}
+#countdown-ended{font-size:20px}
+/* Black countdown title with the timer directly beneath it. */
+.countdown-section h2{color:#000;margin-bottom:12px}
+.countdown-section .countdown{min-height:110px}
+.countdown-section .countdown>.panel{display:none}
+.countdown-section #countdown-clock{position:relative;inset:auto;min-height:110px;padding:0 8px;justify-content:flex-start;color:#000}
+.agenda-section{text-align:center;color:#000;padding:0 14px}
+.agenda-section h2{color:#000;line-height:2}
+.agenda-section p{font-size:clamp(18px,4vw,22px);line-height:2.2;margin:18px 0}
+.dining-emblem{display:block;width:min(75%,280px);height:auto;margin:22px auto}
+.agenda-section .agenda-time{font-size:clamp(20px,4.4vw,24px)}
+.agenda-venue span{display:block;font-size:clamp(17px,3.7vw,21px);line-height:1.8;margin-top:8px}
+.location-section{text-align:center;color:#000;padding:0 10px}
+.location-section h2{color:#000}
+.location-section p{line-height:2;font-size:18px;margin:20px 0}
+.location-photo{border:5px double #c29b49;border-radius:4px}
+.location-qr-link{display:block;width:min(60%,220px);margin:0 auto 22px}
+.location-qr{display:block;width:100%;height:auto;border:2px solid #bc974d}
+.location-link-button{display:inline-block;text-decoration:none;color:#604517;background:linear-gradient(135deg,#fff8e8,#eedbb7);border:2px solid #b58a3f;border-radius:12px;padding:12px 22px;min-height:44px;font-size:17px}
+.location-link-button:focus-visible{outline:2px solid #000;outline-offset:4px}
+/* Recolor the transparent thank-you lettering without changing its shape. */
+.thank-you-black{filter:brightness(0)}
+.greeting-section,.greeting-section h2,.greeting-section label,.greeting-section p,.greeting-section .message{color:#000}
+.greeting-section input,.greeting-section textarea{color:#000;background:#fff8e5e6;border-color:#a98440}
+.greeting-section input::placeholder,.greeting-section textarea::placeholder{color:#444;opacity:1}
+.greeting-section .message{background:#fff8e5de}
+/* Coordinated navy lettering, cream reading surfaces, and gold accents. */
+:root{--invitation-ink:#10243a;--form-ink:#202020;--invitation-gold:#b58a3f}
+#invitation{color:var(--invitation-ink)}
+#invitation h2,.invitation-information,.invitation-information .organizer,.invitation-information .invitation-heading,.invitation-information .invitation-date,.invitation-information .invitation-time,.invitation-information .invitation-venue,.agenda-section,.agenda-section h2,.location-section,.location-section h2,.greeting-section,.greeting-section h2,.greeting-section label,.greeting-section p,#countdown-clock{color:var(--invitation-ink);text-shadow:none}
+.invitation-information,.agenda-section{background:rgba(255,248,229,.4);border:1px solid rgba(181,138,63,.2464);border-radius:16px;margin:20px 0 36px;padding:28px 14px}
+.greeting-section input,.greeting-section textarea,.greeting-section .message{color:var(--form-ink);background:rgba(255,248,229,.9);border-color:var(--invitation-gold)}
+.invitation-divider{color:var(--invitation-gold)}
+.location-photo,.location-qr,.gallery{border-color:var(--invitation-gold)}
+#invitation #close{color:var(--invitation-ink);background:rgba(255,248,229,.88);border-color:var(--invitation-gold);border-radius:8px}
+
+
+.thank-you-frame{margin:20px 0 36px;padding:14px;background:rgba(255,248,229,.4);border:1px solid rgba(181,138,63,.2464);border-radius:16px;overflow:hidden}
+
+
+.thank-you-frame{text-align:center;color:var(--invitation-ink);padding:28px 14px}.thank-you-frame h2{font-size:clamp(18px,4vw,22px);line-height:2.2;font-weight:400;margin:0 0 24px}.thank-you-frame p{font-size:clamp(18px,4vw,22px);line-height:2.2;margin:18px 0}
+
+
