@@ -174,3 +174,19 @@ body,button,input,textarea,.invitation-information,.invitation-information .orga
 .thank-you-frame{text-align:center;color:var(--invitation-ink);padding:28px 14px}.thank-you-frame h2{font-size:clamp(18px,4vw,22px);line-height:2.2;font-weight:400;margin:0 0 24px}.thank-you-frame p{font-size:clamp(18px,4vw,22px);line-height:2.2;margin:18px 0}
 
 
+#swipe-reminder{position:fixed;z-index:30;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;pointer-events:none;color:#10243a;background:rgba(255,248,229,.95);border:1px solid #b58a3f;border-radius:30px;padding:10px 18px;font-size:clamp(12px,3.3vw,16px);box-shadow:0 3px 12px #0002}
+#swipe-reminder[hidden]{display:none}
+#swipe-reminder>span:first-child{font-family:Arial,sans-serif;font-size:26px;animation:swipe-arrow 1.4s ease-in-out infinite}
+@keyframes swipe-arrow{0%,100%{transform:translateY(4px)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){#swipe-reminder>span:first-child{animation:none}}
+/* Digital swipe prompt: illuminated glass with upward signal pulses. */
+#swipe-reminder{gap:13px;padding:12px 17px;border:1px solid rgba(117,218,255,.55);border-radius:18px;color:#eefaff;background:linear-gradient(120deg,rgba(9,26,50,.94),rgba(17,49,75,.91));box-shadow:0 8px 28px #00132655,inset 0 1px 0 #ffffff22,0 0 16px #6bdcff22;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);max-width:calc(100vw - 32px)}
+.swipe-copy{display:flex;flex-direction:column;gap:5px;text-align:left}
+.swipe-copy small{font:9px/1.2 Arial,sans-serif;letter-spacing:2px;color:#88daf5}
+.swipe-copy>span{font-size:clamp(11px,3vw,14px);line-height:1.8}
+#swipe-reminder .swipe-signal{position:relative;display:flex;flex-direction:column;width:22px;gap:2px;animation:none;flex-shrink:0}
+.swipe-signal i{display:block;width:12px;height:12px;border-top:2px solid #9ce9ff;border-left:2px solid #9ce9ff;transform:rotate(45deg);margin:0 auto;animation:digital-swipe 1.6s ease-in-out infinite;filter:drop-shadow(0 0 4px #60d8ff)}
+.swipe-signal i:nth-child(1){animation-delay:.4s}.swipe-signal i:nth-child(2){animation-delay:.2s}
+.swipe-status{width:5px;height:5px;border-radius:50%;background:#8cecff;box-shadow:0 0 8px #8cecff;flex-shrink:0}
+@keyframes digital-swipe{0%,100%{opacity:.2;transform:translateY(3px) rotate(45deg)}50%{opacity:1;transform:translateY(-3px) rotate(45deg)}}
+@media(prefers-reduced-motion:reduce){.swipe-signal i{animation:none;opacity:1}}

@@ -19,7 +19,7 @@ let opening=false;
 document.querySelector('#open').onclick=()=>{opening=true;thirdVideo.style.opacity='0';thirdVideo.pause();thirdVideo.currentTime=0;cover.hidden=true;invitation.hidden=true;background.loop=false;background.src=videos[1];background.play().catch(()=>{opening=false;cover.hidden=false;background.src=videos[0];background.loop=true;});window.scrollTo(0,0)};
 background.onended=()=>{
  if(!opening)return;
- const showInvitation=()=>{if(!opening)return;opening=false;thirdVideo.style.opacity='1';invitation.hidden=false;window.scrollTo(0,0)};
+ const showInvitation=()=>{if(!opening)return;opening=false;thirdVideo.style.opacity='1';invitation.hidden=false;window.scrollTo(0,0);showSwipeReminder()};
  thirdVideo.play().then(()=>{
   if('requestVideoFrameCallback' in thirdVideo)thirdVideo.requestVideoFrameCallback(showInvitation);
   else showInvitation();
@@ -52,3 +52,13 @@ function updateCountdown(){
 let countdownInterval=null;
 updateCountdown();
 if(Date.now()<eventStart)countdownInterval=setInterval(updateCountdown,1000);
+
+const swipeReminder=document.querySelector('#swipe-reminder');
+let swipeReminderTimer=null,swipeReminderActive=false;
+function hideSwipeReminder(){clearTimeout(swipeReminderTimer);swipeReminderTimer=null;swipeReminderActive=false;swipeReminder.hidden=true;}
+function showSwipeReminder(){
+ hideSwipeReminder();swipeReminderActive=true;
+ swipeReminderTimer=setTimeout(()=>{if(swipeReminderActive&&!invitation.hidden&&window.scrollY<10)swipeReminder.hidden=false;},5000);
+}
+window.addEventListener('scroll',()=>{if(swipeReminderActive&&window.scrollY>0)hideSwipeReminder();},{passive:true});
+document.querySelector('#close').addEventListener('click',hideSwipeReminder);
