@@ -5,13 +5,26 @@
   const status=document.querySelector('#status');
   const nameField=document.querySelector('#name'),messageField=document.querySelector('#message');
   const submit=form.querySelector('button');
-  let signature=null,fetching=null,pending=null;
+  let signature=null,fetching=null,pending=null,selectedId=null;
   function render(messages) {
     const next=JSON.stringify(messages);if(next===signature)return;signature=next;
     list.replaceChildren();
     if(!messages.length){const note=document.createElement('p');note.textContent='មិនទាន់មានសារជូនពរ។ អ្នកអាចផ្ញើសារដំបូងបាន។';list.append(note);return;}
     messages.forEach(message=>{
       const card=document.createElement('div');card.className='message';
+      card.tabIndex=0;card.setAttribute('role','button');card.dataset.greetingId=message.id;
+      card.setAttribute('aria-label','សារជូនពររបស់ '+message.name);
+      card.setAttribute('aria-pressed',String(selectedId===message.id));
+      if(selectedId===message.id)card.classList.add('is-selected');
+      function select(){
+        selectedId=selectedId===message.id?null:message.id;
+        list.querySelectorAll('.message').forEach(item=>{
+          const selected=item.dataset.greetingId===selectedId;
+          item.classList.toggle('is-selected',selected);item.setAttribute('aria-pressed',String(selected));
+        });
+      }
+      card.addEventListener('click',select);
+      card.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&!event.repeat){event.preventDefault();select();}});
       const name=document.createElement('strong');name.textContent=message.name;
       const text=document.createElement('p');text.textContent=message.message;
       card.append(name,text);list.append(card);
@@ -50,3 +63,4 @@
   setInterval(()=>{if(!document.hidden)refresh();},10000);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
 })();
+
