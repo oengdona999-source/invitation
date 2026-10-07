@@ -28,15 +28,7 @@ background.onended=()=>{
 background.onerror=()=>{if(!opening)return;opening=false;cover.hidden=false;invitation.hidden=true;background.src=videos[0];background.loop=true;};
 document.querySelector('#close').onclick=()=>{opening=false;thirdVideo.pause();thirdVideo.style.opacity='0';invitation.hidden=true;cover.hidden=false;background.src=videos[0];background.loop=true;background.play().catch(()=>{});window.scrollTo(0,0)};
 const lightbox=document.querySelector('#lightbox');document.querySelectorAll('.gallery button').forEach(button=>button.onclick=()=>{lightbox.querySelector('img').src=button.querySelector('img').src;lightbox.showModal()});document.querySelector('#dismiss').onclick=()=>lightbox.close();
-let messages=[];try{messages=JSON.parse(localStorage.getItem('invitation-greetings')||'[]');if(!Array.isArray(messages))messages=[]}catch{}
-function render(){const list=document.querySelector('#messages');list.replaceChildren();messages.forEach(message=>{const card=document.createElement('div');card.className='message';const name=document.createElement('strong');name.textContent=message.name;const text=document.createElement('p');text.textContent=message.text;card.append(name,text);list.append(card)})}render();
-document.querySelector('#greeting').onsubmit=event=>{event.preventDefault();const name=document.querySelector('#name').value.trim(),text=document.querySelector('#message').value.trim();if(!name||!text)return;messages.unshift({name,text});try{localStorage.setItem('invitation-greetings',JSON.stringify(messages));document.querySelector('#status').textContent='បានរក្សាទុកសារហើយ។'}catch{document.querySelector('#status').textContent='សារបង្ហាញបាន ប៉ុន្តែ browser មិនអនុញ្ញាតឱ្យរក្សាទុក។'}render();document.querySelector('#message').value=''};
-
-
-
-
-
-
+// Shared wishes are handled by greetings.js.
 // Event time is fixed to Cambodia's UTC+07:00 timezone.
 const eventStart=new Date('2026-11-14T11:00:00+07:00').getTime();
 const khmerDigits='០១២៣៤៥៦៧៨៩';
@@ -62,4 +54,5 @@ function showSwipeReminder(){
 }
 window.addEventListener('scroll',()=>{if(swipeReminderActive&&window.scrollY>0)hideSwipeReminder();},{passive:true});
 document.querySelector('#close').addEventListener('click',hideSwipeReminder);
+
 
