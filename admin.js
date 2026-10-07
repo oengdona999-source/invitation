@@ -16,7 +16,7 @@
     if(!names.length || names.some(name => name.length > 200)){status.textContent = 'Enter guest names of 1–200 characters, one per line.';return;}
     const title = document.querySelector('#title').value.trim();
     rows = names.map(name => {
-      const link = new URL(url.href); link.searchParams.set('name', name);
+      const link = new URL(url.href); if (link.protocol !== 'file:') link.pathname = link.pathname.replace(/\/index\.html$/, '/'); link.searchParams.set('name', name);
       if(title) link.searchParams.set('title', title); else link.searchParams.delete('title');
       return {name, title, link:link.href};
     });
@@ -40,3 +40,4 @@
     const anchor=document.createElement('a');anchor.href=href;anchor.download='personal-invitations.csv';anchor.click();setTimeout(()=>URL.revokeObjectURL(href),1000);
   };
 })();
+
