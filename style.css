@@ -190,3 +190,8 @@ body,button,input,textarea,.invitation-information,.invitation-information .orga
 .swipe-status{width:5px;height:5px;border-radius:50%;background:#8cecff;box-shadow:0 0 8px #8cecff;flex-shrink:0}
 @keyframes digital-swipe{0%,100%{opacity:.2;transform:translateY(3px) rotate(45deg)}50%{opacity:1;transform:translateY(-3px) rotate(45deg)}}
 @media(prefers-reduced-motion:reduce){.swipe-signal i{animation:none;opacity:1}}
+
+/* Personalized names inherit the existing invitation typography. */
+#personal-cover-name,.personal-guest-name{overflow-wrap:anywhere;white-space:pre-wrap}
+.personal-guest-name{text-align:center;font-size:clamp(18px,4vw,26px);line-height:1.9;margin:12px 0}
+

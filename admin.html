@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="km">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Invitation — Guest links</title><link rel="stylesheet" href="admin.css"></head>
+<body><main><h1>លិខិតអញ្ជើញផ្ទាល់ខ្លួន</h1><p>Personal Invitation — Generate guest links</p>
+<form id="generator">
+<label for="base">Invitation website URL</label><input id="base" type="url" required><p class="hint">Use your published index.html address when sending links to guests. Local file links only work on this laptop.</p>
+<label for="title">គោរមងារ / Title (optional)</label><input id="title" maxlength="60" placeholder="លោក / លោកស្រី / ឯកឧត្តម">
+<label for="guests">ឈ្មោះភ្ញៀវ / Guest names</label><textarea id="guests" rows="6" required placeholder="Sokha&#10;Dara"></textarea><p class="hint">One guest per line. Edit the names and generate again whenever needed.</p>
+<button type="submit">បង្កើតតំណ / Generate links</button></form>
+<p id="status" role="status"></p><section id="results" hidden><h2>Guest links</h2><button id="copy-all" type="button">Copy all</button> <button id="download" type="button">Download CSV</button><div id="links"></div></section>
+<p class="hint">Names are included in the link and visible to anyone who has it. This page generates links without storing a guest database.</p><a href="index.html">Open invitation</a></main><script src="admin.js"></script></body></html>
