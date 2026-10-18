@@ -5,12 +5,13 @@
   const open = document.querySelector('#open');
   function applyGuest(name, title) {
     if (!name) return;
-    const displayName = [title, name].filter(Boolean).join(' ');
+    const displayName = [title.trim(), name.trim()].filter(Boolean).join('');
     cover.textContent = displayName;
     const guest = document.querySelector('#personal-guest-name');
     guest.textContent = displayName; guest.hidden = false;
     document.querySelector('.honorifics').hidden = true;
-    document.querySelector('#name').value = name;
+    const nameField = document.querySelector('#name');
+    if (nameField) nameField.value = name;
   }
   if (!guestCode) {
     applyGuest((params.get('name') || '').trim().slice(0,200), (params.get('title') || '').trim().slice(0,60));
