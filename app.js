@@ -1,5 +1,5 @@
 const cdn='https://cmssambot.b-cdn.net/05/2026/video/';
-const videos=['assets/videos/01-cover.mp4?v=cover-20261017','assets/videos/02-opening-new.mp4?v=v3-compressed-20261007','assets/videos/03-background.mp4?v=v3-compressed-20261007'];
+const videos=['assets/videos/01-cover.mp4?v=cover-20261018','assets/videos/02-opening-new.mp4?v=v3-compressed-20261007','assets/videos/03-background.mp4?v=v3-compressed-20261007'];
 const background=document.querySelector('#background');background.src=videos[0];
 const thirdVideo=document.createElement('video');
 thirdVideo.src=videos[2];thirdVideo.muted=true;thirdVideo.loop=true;thirdVideo.playsInline=true;thirdVideo.preload='auto';
