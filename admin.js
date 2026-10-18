@@ -31,7 +31,7 @@
       const list = document.querySelector('#links'); list.replaceChildren();
       rows.forEach(row => {
         const card = document.createElement('div'); card.className = 'guest-row';
-        const heading = document.createElement('strong'); heading.textContent = [row.title,row.name].filter(Boolean).join(' ');
+        const heading = document.createElement('strong'); heading.textContent = [row.title,row.name].filter(Boolean).join('');
         const input = document.createElement('input'); input.readOnly = true; input.value = row.link; input.setAttribute('aria-label','Invitation link for '+row.name);
         const button = document.createElement('button'); button.type='button';button.textContent='ចម្លងតំណ / Copy link';button.onclick=()=>copy(row.link,input);
         const preview = document.createElement('a');preview.href=row.link;preview.target='_blank';preview.rel='noopener';preview.textContent='មើលលិខិត / Preview';
