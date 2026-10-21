@@ -13,6 +13,10 @@
     const nameField = document.querySelector('#name');
     if (nameField) nameField.value = name;
   }
+  if (!guestCode && params.get('blank') === '1') {
+    cover.textContent = '';
+    return;
+  }
   if (!guestCode) {
     applyGuest((params.get('name') || '').trim().slice(0,200), (params.get('title') || '').trim().slice(0,60));
     return;
