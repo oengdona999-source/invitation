@@ -1,0 +1,250 @@
+{
+  "assets": [
+    {
+      "contentType": "font/woff2",
+      "id": "f85b5b8733a55a3c",
+      "kind": "font",
+      "name": "0b4b18900d5cf04b-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/f85b5b8733a55a3c.woff2",
+      "url": "https://e.sambot.co/_next/static/media/0b4b18900d5cf04b-s.p.woff2"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "447c998123468567",
+      "kind": "font",
+      "name": "2223128f538507de-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/447c998123468567.woff2",
+      "url": "https://e.sambot.co/_next/static/media/2223128f538507de-s.p.woff2"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "00f049e70292f0b7",
+      "kind": "font",
+      "name": "2df0f432c3c27475-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/00f049e70292f0b7.woff2",
+      "url": "https://e.sambot.co/_next/static/media/2df0f432c3c27475-s.p.woff2"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "f168f64a3e522d10",
+      "kind": "font",
+      "name": "78b5d1908fd328d5-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/f168f64a3e522d10.woff2",
+      "url": "https://e.sambot.co/_next/static/media/78b5d1908fd328d5-s.p.woff2"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "a753a6b6c6eba1f5",
+      "kind": "font",
+      "name": "7b89a4fd5e90ede0-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/a753a6b6c6eba1f5.woff2",
+      "url": "https://e.sambot.co/_next/static/media/7b89a4fd5e90ede0-s.p.woff2"
+    },
+    {
+      "contentType": "font/woff2",
+      "id": "053f7315ff200ccb",
+      "kind": "font",
+      "name": "eaead17c7dbfcd5d-s.p.woff2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/053f7315ff200ccb.woff2",
+      "url": "https://e.sambot.co/_next/static/media/eaead17c7dbfcd5d-s.p.woff2"
+    },
+    {
+      "contentType": "image/png",
+      "id": "458739b527ee0533",
+      "kind": "image",
+      "name": "E6OeFkiDkP204MhAhYBRFk9PQm9cgXBnJSNxDkCg.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/458739b527ee0533.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/E6OeFkiDkP204MhAhYBRFk9PQm9cgXBnJSNxDkCg.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f4dc26f4bb1b42ed",
+      "kind": "image",
+      "name": "L4V3mZFSNAEygKqQeHHeLTsA3ViKH14QGW3pfwvs.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/f4dc26f4bb1b42ed.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/L4V3mZFSNAEygKqQeHHeLTsA3ViKH14QGW3pfwvs.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "a3e723db1a2a5db2",
+      "kind": "image",
+      "name": "view-location-button.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/a3e723db1a2a5db2.png",
+      "url": "https://e.sambot.co/view-location-button.png"
+    },
+    {
+      "contentType": "text/css",
+      "id": "529c47d2ab708cdd",
+      "kind": "stylesheet",
+      "name": "472f0ec9459ab701.css",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/529c47d2ab708cdd.css",
+      "url": "https://e.sambot.co/_next/static/css/472f0ec9459ab701.css"
+    },
+    {
+      "contentType": "text/css",
+      "id": "9ed5a990a9833065",
+      "kind": "stylesheet",
+      "name": "e69198de35ab2a2d.css",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/9ed5a990a9833065.css",
+      "url": "https://e.sambot.co/_next/static/css/e69198de35ab2a2d.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "5818cfdb8af46145",
+      "kind": "image",
+      "name": "4VD6ZT01yyTOm4XMSCWKFTPUTLv7ndbYDQfaGJoX.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/5818cfdb8af46145.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/4VD6ZT01yyTOm4XMSCWKFTPUTLv7ndbYDQfaGJoX.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "6d34aa1ae5261048",
+      "kind": "image",
+      "name": "send-greeting-button.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/6d34aa1ae5261048.png",
+      "url": "https://e.sambot.co/send-greeting-button.png"
+    },
+    {
+      "contentType": "text/css",
+      "id": "9ab4dc06f257d74c",
+      "kind": "stylesheet",
+      "name": "css2",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/9ab4dc06f257d74c",
+      "url": "https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100;300;400;500;700;900&display=swap"
+    },
+    {
+      "contentType": "font/ttf",
+      "id": "f984b2fbb680d4d3",
+      "kind": "font",
+      "name": "KhmerHUYSAVYR-Bold.ttf",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/f984b2fbb680d4d3.ttf",
+      "url": "https://e.sambot.co/fonts/KhmerHUYSAVYR-Bold.ttf"
+    },
+    {
+      "contentType": "image/png",
+      "id": "ad61bd0a5ab6efb9",
+      "kind": "image",
+      "name": "6X1BuULjVkuPKvTyFWAyscATawrQKlbUbFODttoj.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/ad61bd0a5ab6efb9.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/6X1BuULjVkuPKvTyFWAyscATawrQKlbUbFODttoj.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "f90f775ace27510e",
+      "kind": "image",
+      "name": "DrC0fFb0j6hmZyps4zxi0j1ArD6DBReRgb0JwlT1.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/f90f775ace27510e.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/DrC0fFb0j6hmZyps4zxi0j1ArD6DBReRgb0JwlT1.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "0d4a1a684b54ba62",
+      "kind": "image",
+      "name": "nENwobPBIgxdkpTKv7lgCYRaLrwm44g5p3uQZbL7.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/0d4a1a684b54ba62.png",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/nENwobPBIgxdkpTKv7lgCYRaLrwm44g5p3uQZbL7.png"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "3ecdcb146826b99c",
+      "kind": "image",
+      "name": "image",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/3ecdcb146826b99c",
+      "url": "https://e.sambot.co/_next/image?url=%2Fopen-ticket-button.png&w=640&q=90"
+    },
+    {
+      "contentType": "text/css",
+      "id": "9b18e1df58d6cd06",
+      "kind": "stylesheet",
+      "name": "f41feaa465864831.css",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/9b18e1df58d6cd06.css",
+      "url": "https://e.sambot.co/_next/static/css/f41feaa465864831.css"
+    },
+    {
+      "contentType": "text/css",
+      "id": "6efa6088ed5687cd",
+      "kind": "stylesheet",
+      "name": "583acdfa18700682.css",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/6efa6088ed5687cd.css",
+      "url": "https://e.sambot.co/_next/static/css/583acdfa18700682.css"
+    },
+    {
+      "contentType": "image/png",
+      "id": "6a19ab2f0e0852f1",
+      "kind": "image",
+      "name": "line-name.png",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/6a19ab2f0e0852f1.png",
+      "url": "https://e.sambot.co/line-name.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "307ba1f05f625388",
+      "kind": "image",
+      "name": "HMDZTQQmYN57TCt46mPHKvA0LvqEZMhD3eG5UNhA.jpg",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/307ba1f05f625388.jpg",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/HMDZTQQmYN57TCt46mPHKvA0LvqEZMhD3eG5UNhA.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "1b007007b0c12791",
+      "kind": "image",
+      "name": "Dgaw9QK8F8rmsuPGEyBuydSe9ukFkiliTnShkGHL.jpg",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/1b007007b0c12791.jpg",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/Dgaw9QK8F8rmsuPGEyBuydSe9ukFkiliTnShkGHL.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "bf0dcc86172bb9d1",
+      "kind": "image",
+      "name": "EOiiEz3xbNtxXlFE6FVbwsF1lt2qgk8dvz0gVVdt.jpg",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/bf0dcc86172bb9d1.jpg",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/EOiiEz3xbNtxXlFE6FVbwsF1lt2qgk8dvz0gVVdt.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "00b6f1837e166250",
+      "kind": "image",
+      "name": "wK1370N9tcdFYw171byjyj0C6DUBB1MY1Hvia92m.jpg",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/00b6f1837e166250.jpg",
+      "url": "https://cmssambot.b-cdn.net/05/2026/image/segments/wK1370N9tcdFYw171byjyj0C6DUBB1MY1Hvia92m.jpg"
+    },
+    {
+      "contentType": "image/x-icon",
+      "id": "8515f0b9383b0048",
+      "kind": "image",
+      "name": "favicon.ico",
+      "path": "C:\\Users\\FTC\\AppData\\Local\\Temp/browser-use/assets/d825261f-2c8b-404c-a954-cb053aaba939/8515f0b9383b0048.ico",
+      "url": "https://e.sambot.co/favicon.ico"
+    }
+  ],
+  "failures": [
+    {
+      "contentType": null,
+      "id": "5295c911a2175360",
+      "name": "maxresdefault.jpg",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at ZZ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://i.ytimg.com/vi/-4ScxFmTTTA/maxresdefault.jpg"
+    },
+    {
+      "contentType": null,
+      "id": "0b5923f29ad9fb5f",
+      "name": "BhOopGjLwWrFmOgedGKKwiNYZrm6wYbDpVJ4SX2M.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at ZZ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://cmssambot.b-cdn.net/05/2026/video/theme_video_1/BhOopGjLwWrFmOgedGKKwiNYZrm6wYbDpVJ4SX2M.mp4?cache=true"
+    },
+    {
+      "contentType": null,
+      "id": "86f2b9025cb04881",
+      "name": "TMLdHrH43fyZk5J8OElLRaO1KythYVf3F5ah8MMA.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at ZZ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://cmssambot.b-cdn.net/05/2026/video/theme_video_2/TMLdHrH43fyZk5J8OElLRaO1KythYVf3F5ah8MMA.mp4?cache=true"
+    },
+    {
+      "contentType": null,
+      "id": "d0d8ac82c5665869",
+      "name": "ZhGnF49DDe4YYmti5HdiFQEwHUrIokc2jPjzHUKq.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at ZZ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://cmssambot.b-cdn.net/05/2026/video/theme_video_3/ZhGnF49DDe4YYmti5HdiFQEwHUrIokc2jPjzHUKq.mp4?cache=true"
+    }
+  ]
+}
