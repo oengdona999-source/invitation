@@ -5,7 +5,8 @@
   const open = document.querySelector('#open');
   function applyGuest(name, title) {
     if (!name) return;
-    const displayName = [title.trim(), name.trim()].filter(Boolean).join('');
+    const guestName = guestCode === 'zkgxl7FACe7f' && name.trim() === 'ឯកឧត្តម ទៀ សុខា' ? name.trim() + ' និងលោកជំទាវ' : name.trim();
+    const displayName = [title.trim(), guestName].filter(Boolean).join('');
     cover.textContent = displayName;
     const guest = document.querySelector('#personal-guest-name');
     guest.textContent = displayName; guest.hidden = false;
