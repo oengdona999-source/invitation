@@ -5,7 +5,11 @@
   const open = document.querySelector('#open');
   function applyGuest(name, title) {
     if (!name) return;
-    const guestName = guestCode === 'zkgxl7FACe7f' && name.trim() === 'ឯកឧត្តម ទៀ សុខា' ? name.trim() + ' និងលោកជំទាវ' : name.trim();
+    const spouseInvitationCodes = new Set(['Wikm03w3nTS3', 'b7sMo6nO__7D', 'zkgxl7FACe7f', 'jcBU5RwzJSV5', '0cco_zT8QNKH']);
+    const baseGuestName = name.trim();
+    const guestName = spouseInvitationCodes.has(guestCode) && !baseGuestName.includes('និងលោកជំទាវ')
+      ? baseGuestName + ' និងលោកជំទាវ'
+      : baseGuestName;
     const displayName = [title.trim(), guestName].filter(Boolean).join('');
     cover.textContent = displayName;
     const guest = document.querySelector('#personal-guest-name');
