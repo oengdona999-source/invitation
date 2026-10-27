@@ -10,7 +10,10 @@
     const guestName = spouseInvitationCodes.has(guestCode) && !baseGuestName.includes('និងលោកជំទាវ')
       ? baseGuestName + ' និងលោកជំទាវ'
       : baseGuestName;
-    const displayName = [title.trim(), guestName].filter(Boolean).join('');
+    const removeLokCodes = new Set(['KRKQyk8KSXYw', 'ZwmvLazTGb9y', 't-4HYd3s5vNN']);
+    const displayName = removeLokCodes.has(guestCode)
+      ? [title.trim(), guestName].filter(Boolean).join('').replace(/^លោក(?!ជំទាវ|ស្រី|អ្នកឧកញ៉ា)\s*/, '').trim()
+      : [title.trim(), guestName].filter(Boolean).join('');
     cover.textContent = displayName;
     const guest = document.querySelector('#personal-guest-name');
     guest.textContent = displayName; guest.hidden = false;
