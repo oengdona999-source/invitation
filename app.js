@@ -1,5 +1,5 @@
 const cdn='https://cmssambot.b-cdn.net/05/2026/video/';
-const videos=['assets/videos/01-cover.mp4?v=gold-cover-20261018','assets/videos/02-opening-new.mp4?v=v3-compressed-20261007','assets/videos/03-background.mp4?v=v3-compressed-20261007'];
+const videos=['assets/videos/01-cover.mp4?v=gold-cover-20261018','assets/videos/02-opening-nov18.mp4?v=20261102','assets/videos/03-background.mp4?v=v3-compressed-20261007'];
 const background=document.querySelector('#background');background.src=videos[0];
 const thirdVideo=document.createElement('video');
 thirdVideo.src=videos[2];thirdVideo.muted=true;thirdVideo.loop=true;thirdVideo.playsInline=true;thirdVideo.preload='auto';
@@ -30,7 +30,7 @@ document.querySelector('#close').onclick=()=>{opening=false;thirdVideo.pause();t
 const lightbox=document.querySelector('#lightbox');document.querySelectorAll('.gallery button').forEach(button=>button.onclick=()=>{lightbox.querySelector('img').src=button.querySelector('img').src;lightbox.showModal()});document.querySelector('#dismiss').onclick=()=>lightbox.close();
 // Shared wishes are handled by greetings.js.
 // Event time is fixed to Cambodia's UTC+07:00 timezone.
-const eventStart=new Date('2026-11-14T11:00:00+07:00').getTime();
+const eventStart=new Date('2026-11-18T11:00:00+07:00').getTime();
 const khmerDigits='០១២៣៤៥៦៧៨៩';
 function countdownNumber(value,pad=true){return String(value).padStart(pad?2:1,'0').replace(/\d/g,digit=>khmerDigits[Number(digit)]);}
 function updateCountdown(){
@@ -54,5 +54,6 @@ function showSwipeReminder(){
 }
 window.addEventListener('scroll',()=>{if(swipeReminderActive&&window.scrollY>0)hideSwipeReminder();},{passive:true});
 document.querySelector('#close').addEventListener('click',hideSwipeReminder);
+
 
 
