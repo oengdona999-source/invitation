@@ -1,8 +1,8 @@
 const cdn='https://cmssambot.b-cdn.net/05/2026/video/';
 const videos=['assets/videos/01-cover.mp4?v=gold-cover-20261018','assets/videos/02-opening-nov18-mobile.mp4?v=20261103','assets/videos/03-background.mp4?v=v3-compressed-20261007'];
-const background=document.querySelector('#background');background.src=videos[0];
+const background=document.querySelector('#background');background.poster='assets/sky-background-poster.jpg';background.src=videos[0];
 const thirdVideo=document.createElement('video');
-thirdVideo.src=videos[2];thirdVideo.muted=true;thirdVideo.loop=true;thirdVideo.playsInline=true;thirdVideo.preload='auto';
+thirdVideo.src=videos[2];thirdVideo.muted=true;thirdVideo.loop=true;thirdVideo.playsInline=true;thirdVideo.preload='none';thirdVideo.poster='assets/sky-background-poster.jpg';
 thirdVideo.setAttribute('webkit-playsinline','');thirdVideo.setAttribute('aria-hidden','true');
 thirdVideo.style.cssText='position:absolute;inset:0;opacity:0;transition:opacity .35s ease;';
 background.parentElement.append(thirdVideo);
@@ -15,18 +15,35 @@ music.addEventListener('play',updateSound);music.addEventListener('pause',update
 soundToggle.onclick=()=>{if(music.paused)startMusic();else music.pause();};
 document.querySelector('#open').addEventListener('click',()=>{soundToggle.hidden=false;startMusic();});
 document.querySelector('#close').addEventListener('click',()=>{music.pause();soundToggle.hidden=true;});
-let opening=false;
-document.querySelector('#open').onclick=()=>{opening=true;thirdVideo.style.opacity='0';thirdVideo.pause();thirdVideo.currentTime=0;cover.hidden=true;invitation.hidden=true;background.loop=false;background.src=videos[1];background.play().catch(()=>{opening=false;cover.hidden=false;background.src=videos[0];background.loop=true;});window.scrollTo(0,0)};
-background.onended=()=>{
+let opening=false,openingTimer=null;
+const loading=document.createElement('div');
+loading.hidden=true;loading.style.cssText='position:fixed;inset:0;z-index:1000;background:rgba(9,33,54,.62);display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;color:#fff;font-family:Siemreap,serif;text-align:center;padding:24px;';
+const loadingText=document.createElement('p');loadingText.textContent='កំពុងផ្ទុកវីដេអូ…';
+const skipVideo=document.createElement('button');skipVideo.type='button';skipVideo.textContent='ចូលមើលលិខិតអញ្ជើញ';skipVideo.style.cssText='padding:12px 20px;border:1px solid #dfc16a;border-radius:12px;background:#fff5d5;color:#17334c;font:inherit;cursor:pointer;';
+loading.append(loadingText,skipVideo);document.body.append(loading);
+function setLoading(show){loading.hidden=!show;loading.style.display=show?'flex':'none';}
+function finishOpening(){
  if(!opening)return;
- const showInvitation=()=>{if(!opening)return;opening=false;thirdVideo.style.opacity='1';invitation.hidden=false;window.scrollTo(0,0);showSwipeReminder()};
- thirdVideo.play().then(()=>{
-  if('requestVideoFrameCallback' in thirdVideo)thirdVideo.requestVideoFrameCallback(showInvitation);
-  else showInvitation();
- }).catch(()=>{if(!opening)return;opening=false;cover.hidden=false;background.src=videos[0];background.loop=true;});
+ opening=false;clearTimeout(openingTimer);setLoading(false);background.pause();
+ thirdVideo.style.opacity='1';invitation.hidden=false;cover.hidden=true;
+ thirdVideo.play().catch(()=>{});
+ window.scrollTo(0,0);showSwipeReminder();
+}
+skipVideo.onclick=finishOpening;
+document.querySelector('#open').onclick=()=>{
+ opening=true;clearTimeout(openingTimer);thirdVideo.style.opacity='0';thirdVideo.pause();thirdVideo.currentTime=0;
+ cover.hidden=true;invitation.hidden=true;setLoading(true);background.loop=false;background.src=videos[1];
+ openingTimer=setTimeout(finishOpening,15000);
+ background.play().catch(finishOpening);window.scrollTo(0,0);
 };
-background.onerror=()=>{if(!opening)return;opening=false;cover.hidden=false;invitation.hidden=true;background.src=videos[0];background.loop=true;};
-document.querySelector('#close').onclick=()=>{opening=false;thirdVideo.pause();thirdVideo.style.opacity='0';invitation.hidden=true;cover.hidden=false;background.src=videos[0];background.loop=true;background.play().catch(()=>{});window.scrollTo(0,0)};
+background.onplaying=()=>{if(opening)setLoading(false);};
+background.onwaiting=()=>{if(opening)setLoading(true);};
+background.onended=finishOpening;
+background.onerror=()=>{if(opening)finishOpening();};
+document.querySelector('#close').onclick=()=>{
+ opening=false;clearTimeout(openingTimer);setLoading(false);thirdVideo.pause();thirdVideo.style.opacity='0';
+ invitation.hidden=true;cover.hidden=false;background.src=videos[0];background.loop=true;background.play().catch(()=>{});window.scrollTo(0,0);
+};
 const lightbox=document.querySelector('#lightbox');document.querySelectorAll('.gallery button').forEach(button=>button.onclick=()=>{lightbox.querySelector('img').src=button.querySelector('img').src;lightbox.showModal()});document.querySelector('#dismiss').onclick=()=>lightbox.close();
 // Shared wishes are handled by greetings.js.
 // Event time is fixed to Cambodia's UTC+07:00 timezone.
